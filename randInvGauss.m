@@ -7,15 +7,6 @@ function [x] = randInvGauss(mu, lambda, noSteps, noStreams)
 % Nsteps: number of rows for the matrix returned
 % n: number of columns for the matrix returned
 
-%=======CODE TO BE BLOCKED IF SCRIPT IS TO BE CALLED AS A FUNCTION======
-% clc
-% clear
-% 
-% mn=5;
-% stdev=2;
-% Nsteps=50;
-% n=6;
-%=======================================================================
 
 normRandData = random('norm', 0, 1, noSteps, noStreams);% Random Gaussian data
 y = normRandData.*normRandData;
@@ -29,12 +20,3 @@ for row = 1:noSteps
         end
     end
 end
-
-
-%=======CODE TO BE BLOCKED IF SCRIPT IS TO BE CALLED AS A FUNCTION======
-% mxw=mean(xw)
-% sdxw=std(xw)
-% mnrand=mean(nrandmtx)
-% sdnrand=std(nrandmtx)
-% hist(xw,20)
-%=======================================================================
