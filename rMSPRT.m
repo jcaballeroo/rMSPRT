@@ -6,9 +6,9 @@
 %                https://doi.org/10.1371/journal.pcbi.1006033. Also enabling to effectively
 %                simulate the (non-recursive) traditional MSPRT for comparison.
 %  
-% @version: 0.1
+% @version: 0.11
 % @created:  12-Jan-2016       
-% @lastModified: 19-Apr-2018   
+% @lastModified: 20-Apr-2018   
 % @bugs: no known bugs  
 % @author: Javier A. Caballero (jcaballeroo)
 % @lastEditor: Javier A. Caballero (jcaballeroo)
