@@ -48,7 +48,7 @@ clear
 % general 
 thCtxOn = 1;% thalamocortical connection 1 = on (rMSPRT) or 0 = off (effectively MSPRT)
 iCoherence = 4;% index of coherence % within {3.2, 6.4, 12.8, 25.6, 51.2}
-noHyp = 4;% No. hypotheses, N (here equal to No. channels, C)
+noHyp = 2;% No. hypotheses, N (here equal to No. channels, C)
 iPrefCh = 1;% index of preferred channel
 mtPdf = 'l';% probability density function of ISIs (keep as 'l', which stands for lognormal)
 decThresh = 1/100;% decision threshold for basal ganglia output, \theta
@@ -62,6 +62,8 @@ dataScalingFactor = 40;% data scaling factor, n
 %......'mt': computed from MT data (set \Omega)
 %......'mtInfoDeplN2': after information depletion (\Omega_d) for N = 2 
 %......'mtInfoDeplN4': after information depletion (\Omega_d) for N = 4
+% NOTE: information depleted parameter sets are most relevant when consistent
+%       with the number of hypotheses, N (variable noHyp above)
 paramCase = 'mtInfoDeplN2';       
 
 % retrieve parameter set
@@ -149,7 +151,7 @@ while indTerm == 0 || indFedback == 0
         dummy = cumsum(log(data((t - loopDelay + 1):t, :)), 1);
         y2(t,:) = dummy(loopDelay, :);
     end
-    # simplified log-likelihood, y_i(t)
+    % simplified log-likelihood, y_i(t)
     simpLL(t,:) = g2*y2(t,:) - g1*y1(t,:);
     
     
